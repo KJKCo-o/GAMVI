@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 import config
 
@@ -25,7 +25,10 @@ SECRET_KEY = config.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".ap-northeast-2.compute.amazonaws.com"]
+ALLOWED_HOSTS = [
+    ".ap-northeast-2.compute.amazonaws.com",
+    "127.0.0.1"
+]
 
 # Application definition
 
@@ -38,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'main',
-    'rest_framework', # DRF
-    'corsheaders', # django-cors-headers
+    'rest_framework',  # DRF
+    'corsheaders',  # django-cors-headers
 ]
 
 # rest_framework 추가
@@ -50,9 +53,9 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # corsheader 추가
-    'django.middleware.common.CommonMiddleware', # corsheader 추가
-    
+    'corsheaders.middleware.CorsMiddleware',  # corsheader 추가
+    'django.middleware.common.CommonMiddleware',  # corsheader 추가
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,7 +67,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
-    'http://ec2-15-164-104-128.ap-northeast-2.compute.amazonaws.com:8080/'
+    'http://ec2-15-164-104-128.ap-northeast-2.compute.amazonaws.com'
 )
 
 CORS_ALLOW_CREDENTIALS = True
@@ -127,7 +130,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
