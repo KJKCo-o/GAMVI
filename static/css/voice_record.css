@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "gmarket";
+    src: url("../assets/fonts/GmarketSansTTFLight.ttf") format("truetype");
+}
+
+body {
+    height: 100vh;
+    background-image: url("../assets/images/gamvi_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "gmarket";
+}
+
+.logo {
+    width: 20%;
+    max-width: 200px;
+}
+
+.voice-record {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mirror {
+    width: 600px;
+    height: 400px;
+    background-color: black;
+}
