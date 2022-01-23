@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>GAMBI</title>
+    <title>GAMVI</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
+
 <body>
     <div class="main">
-        <div class="right">
-            <h1>Calendar</h1>
+        <div class="left">
+            <div class="sec_cal">
+                <div class="cal_nav">
+                    <a href="javascript:" class="nav-btn go-prev"><</a>
+                    <div class="year-month"></div>
+                    <a href="javascript:" class="nav-btn go-next">></a>
+                </div>
+                <div class="cal_wrap">
+                    <div class="days">
+                        <div class="day">SUN</div>
+                        <div class="day">MON</div>
+                        <div class="day">TUE</div>
+                        <div class="day">WED</div>
+                        <div class="day">THU</div>
+                        <div class="day">FRI</div>
+                        <div class="day">SAT</div>
+                    </div>
+                    <div class="dates"></div>
+                </div>
+            </div>
+            <script src="{% static 'js/calendar.js'%}"></script>
         </div>
 
-        <div class="left">
+        <div class="right">
             <h2>당신의 감정 비타민,</h2>
             <img src="{% static 'assets/images/gamvi_logo.png' %}">
             <h1>오늘 하루를 기록해 보세요 :)</h1>
