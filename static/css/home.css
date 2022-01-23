@@ -1,3 +1,84 @@
-body {
-    background-color: skyblue;
+/* section calendar */
+
+@font-face {
+    font-family: 'nanum';
+    src: url("../assets/fonts/NanumDaheng.ttf") format("truetype");
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.sec_cal {
+    width: 360px;
+    margin: 0 auto;
+    font-family: 'nanum';
+}
+
+.sec_cal .cal_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 78px;
+}
+
+.sec_cal .cal_nav .year-month {
+    width: 300px;
+    text-align: center;
+    line-height: 1;
+}
+
+.sec_cal .cal_wrap {
+    padding-top: 10px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.sec_cal .cal_wrap .days {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sec_cal .cal_wrap::after {
+    top: 368px;
+}
+
+.sec_cal .cal_wrap .day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 7);
+    text-align: left;
+    color: #000000;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 5px
+}
+
+.current.today {
+    background: rgb(242 242 242);
+}
+
+.sec_cal .cal_wrap .dates {
+    display: flex;
+    flex-flow: wrap;
+    height: 290px;
+}
+
+.sec_cal .cal_wrap .day:nth-child(7n +1) {
+    color: #ed2a61;
+}
+
+.sec_cal .cal_wrap .day:nth-child(7n) {
+    color: #3c6ffa;
+}
+
+.sec_cal .cal_wrap .day.disable {
+    visibility: hidden;
+    /*color: #ddd;*/
 }
