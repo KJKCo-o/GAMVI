@@ -7,3 +7,6 @@ def home(request):
   
 def voice(request):
     return render(request, 'main/voice_record.html')
+
+def emotion(request):
+    return render(request, 'main/emotion_record.html')

@@ -11,15 +11,15 @@ body {
     font-family: "gmarket";
 }
 
-.logo {
-    width: 20%;
-    max-width: 180px;
-}
-
-.voice-record {
+.emotion-record {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.logo {
+    width: 20%;
+    max-width: 180px;
 }
 
 .mirror {
@@ -28,6 +28,18 @@ body {
     background-color: black;
 }
 
-.mic {
-    margin-top: 50px;
+button {
+    border: none;
+    background: none;
+}
+
+.emotion-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.emotion-btns img {
+    margin-top: 20px;
+    width: 60%;
 }
