@@ -3,13 +3,18 @@
     src: url("../assets/fonts/GmarketSansTTFLight.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "nanum";
+    src: url("../assets/fonts/NanumDaheng.ttf") format("truetype");
+}
+
 a {
     text-decoration-line: none;
     color: black;
 }
 
 body {
-    height: 100vh;
+    height: 90vh;
     background-image: url("../assets/images/gamvi_background.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -105,6 +110,7 @@ body {
 .left .sec_cal .cal_wrap .day.disable {
     visibility: hidden;
     /*color: #ddd;*/
+}
 
 .right {
     flex: 1;
@@ -115,5 +121,6 @@ body {
 
 .right img {
     width: 50%;
-    height: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
