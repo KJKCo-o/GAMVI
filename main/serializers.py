@@ -5,7 +5,7 @@ class CalendarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Calendar
         fields = (
-            'calender_id',
+            'calendar_id',
             'user',
             'date',
             'emotion',

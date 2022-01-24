@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Calendar(models.Model):
-    calender_id = models.AutoField(primary_key=True)
+    calendar_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('User', models.DO_NOTHING)
     date = models.DateTimeField()
     emotion = models.CharField(max_length=12)
