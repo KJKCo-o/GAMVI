@@ -1,14 +1,15 @@
 from django.db import models
 
+
 class Calendar(models.Model):
-    calender_id = models.IntegerField(primary_key=True)
+    calender_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('User', models.DO_NOTHING)
     date = models.DateTimeField()
     emotion = models.CharField(max_length=12)
 
     class Meta:
         managed = False
-        db_table = 'CALENDAR'
+        db_table = 'calendar'
 
 
 class Detail(models.Model):
@@ -24,7 +25,7 @@ class Detail(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'DETAIL'
+        db_table = 'detail'
 
 
 class User(models.Model):
@@ -37,4 +38,4 @@ class User(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'USER'
+        db_table = 'user'
