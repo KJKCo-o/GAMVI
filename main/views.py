@@ -49,6 +49,8 @@ class CalendarDetail(View):
             # 필요 데이터 조합
             detail = dict()
             detail['id'] = record['calendar_id']
+            detail['month'] = record['date'].month
+            detail['day'] = record['date'].day
             detail['user_name'] = user['name']
             detail['sentence'] = record_detail['sentence']
             detail['emotion'] = record['emotion']
