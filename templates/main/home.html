@@ -5,39 +5,43 @@
     <meta charset="UTF-8">
     <title>GAMVI</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="main">
-        <div class="left">
-            <div class="sec_cal">
-                <div class="cal_nav">
-                    <a href="javascript:" class="nav-btn go-prev"><</a>
-                    <div class="year-month"></div>
-                    <a href="javascript:" class="nav-btn go-next">></a>
+<div class="main">
+    <div class="left">
+        <div class="sec_cal">
+            <div class="cal_nav">
+                <a href="javascript:" class="nav-btn go-prev"><</a>
+                <div class="year-month">
+                    <div class="year"></div>
+                    <div class="month"></div>
                 </div>
-                <div class="cal_wrap">
-                    <div class="days">
-                        <div class="day">SUN</div>
-                        <div class="day">MON</div>
-                        <div class="day">TUE</div>
-                        <div class="day">WED</div>
-                        <div class="day">THU</div>
-                        <div class="day">FRI</div>
-                        <div class="day">SAT</div>
-                    </div>
-                    <div class="dates"></div>
-                </div>
+                <a href="javascript:" class="nav-btn go-next">></a>
             </div>
-            <script src="{% static 'js/calendar.js'%}"></script>
+            <div class="cal_wrap">
+                <div class="days">
+                    <div class="day">SUN</div>
+                    <div class="day">MON</div>
+                    <div class="day">TUE</div>
+                    <div class="day">WED</div>
+                    <div class="day">THU</div>
+                    <div class="day">FRI</div>
+                    <div class="day">SAT</div>
+                </div>
+                <div class="dates"></div>
+            </div>
         </div>
+        <script src="{% static 'js/calendar.js'%}"></script>
+    </div>
 
-        <div class="right">
-            <h2>당신의 감정 비타민,</h2>
-            <img src="{% static 'assets/images/gamvi_logo.png' %}">
-            <h1>오늘 하루를 기록해 보세요 :)</h1>
-        </div>
+    <div class="right">
+        <h2>당신의 감정 비타민,</h2>
+        <img src="{% static 'assets/images/gamvi_logo.png' %}">
+        <h1>오늘 하루를 기록해 보세요 :)</h1>
         <button id="btnStart" class="start-btn"><img src="{% static 'assets/images/start_btn.png' %}"></button>
     </div>
+</div>
 </body>
 </html>

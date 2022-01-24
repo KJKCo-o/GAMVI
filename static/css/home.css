@@ -49,15 +49,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
-    font-size: 50px;
+    font-weight: 300;
+    font-size: 55px;
     line-height: 78px;
 }
 
-.left .sec_cal .cal_nav .year-month {
+.sec_cal .cal_nav .year-month {
     width: 300px;
     text-align: center;
     line-height: 1;
+    font-weight: 400;
+    font-size: 45px;
+}
+
+.sec_cal .cal_nav .year-month .year {
+    font-size: 20px;
 }
 
 .left .sec_cal .cal_wrap {
@@ -73,10 +79,6 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-.left .sec_cal .cal_wrap::after {
-    top: 368px;
-}
-
 .left .sec_cal .cal_wrap .day {
     display: flex;
     align-items: center;
@@ -84,14 +86,50 @@ body {
     width: calc(100% / 7);
     text-align: left;
     color: #000000;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     border-radius: 5px
 }
 
-.left .current.today {
-    background: rgb(242 242 242);
+.left .current {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
+
+.left .current.angry {
+    background: url(../../static/assets/images/gamvi_angry.png);
+    background-size: cover;
+}
+
+.left .current.soso {
+    background: url(../../static/assets/images/gamvi_soso.png);
+    background-size: cover;
+}
+
+.left .current.sad {
+    background: url(../../static/assets/images/gamvi_sad.png);
+    background-size: cover;
+}
+
+.left .current.excited {
+    background: url(../../static/assets/images/gamvi_excited.png);
+    background-size: cover;
+}
+
+.left .current.heart {
+    background: url(../../static/assets/images/gamvi_heart.png);
+    background-size: cover;
+}
+
+.left .current.blue {
+    background: url(../../static/assets/images/gamvi_blue.png);
+    background-size: cover;
+}
+
+/*.left .current.today {*/
+/*    background-color: #dddddd;*/
+/*}*/
 
 .left .sec_cal .cal_wrap .dates {
     display: flex;
@@ -99,7 +137,7 @@ body {
     height: 290px;
 }
 
-.left .sec_cal .cal_wrap .day:nth-child(7n +1) {
+.left .sec_cal .cal_wrap .day:nth-child(7n + 1) {
     color: #ed2a61;
 }
 
