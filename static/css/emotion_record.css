@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "gmarket";
+    src: url("../assets/fonts/GmarketSansTTFLight.ttf") format("truetype");
+}
+
+body {
+    height: 100vh;
+    background-image: url("../assets/images/gamvi_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "gmarket";
+}
+
+.emotion-record {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 20%;
+    max-width: 180px;
+}
+
+.mirror {
+    width: 650px;
+    height: 330px;
+    background-color: black;
+}
+
+.emotion-btns button {
+    border: none;
+    background: none;
+}
+
+.emotion-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.emotion-btns img {
+    margin-top: 30px;
+    width: 50%;
+}
+
+.back-btn {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: none;
+    background: none;
+}
+
+.back-btn img {
+    width: 60%;
+}

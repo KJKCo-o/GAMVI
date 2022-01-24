@@ -1,9 +1,11 @@
 import pandas as pd
 
-
 # 감정 사전 읽어 오기
+import config
+
+
 def open_emotion_dictionary():
-    df_emotion = pd.read_excel('../../static/assets/resources/감정 단어.xlsx', index_col=0)
+    df_emotion = pd.read_excel(config.EMO_DICT_PATH, index_col=0)
     return df_emotion
 
 
@@ -23,6 +25,17 @@ def analyzeEmotion(df_emotion, token_list, lem_list):
         if -1 not in emotion_list:
             for idx in range(len(emotion_list)):
                 emotions[emotion_list[idx]] += float(score_list[idx])
+
+    list_max = max(emotions.values()) / 10
+
+    for i in emotions:
+        emotions[i] += list_max
+
+    list_sum = sum(emotions.values())
+
+    if list_sum != 0:
+        for i in emotions:
+            emotions[i] = emotions[i] / list_sum
 
     return emotions
 

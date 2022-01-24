@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>GAMBI</title>
+    <title>GAMVI</title>
     <link rel="stylesheet" href="{% static 'css/voice_record.css' %}">
 </head>
+
 <body>
     <img class="logo" src="{% static 'assets/images/gamvi_logo.png' %}">
-    <div class="voice-record">
-        <h1>오늘의 감정을 기록하세요</h1>
+    <div id="recordVoice" class="voice-record">
+        <h1>당신의 하루를 들려주세요</h1>
         <div class="mirror"></div>
+        <button id="recording">
+            <div class="loader loader-2"></div>
+        </button>
+        <button id="btnBack" class="back-btn"><img src="{% static 'assets/images/back_btn.png' %}"></button>
+        <button id="btnComplete" class="complete-btn"><img src="{% static 'assets/images/complete_btn.png' %}"></button>
     </div>
 </body>
 </html>
