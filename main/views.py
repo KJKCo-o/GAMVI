@@ -16,6 +16,9 @@ def voice(request):
 def emotion(request):
     return render(request, 'main/emotion_record.html')
 
+def dailyDetail(request):
+    return render(request, 'main/daily_detail.html')
+
 class CalendarList(View):
     def get(self, request):
         try:
