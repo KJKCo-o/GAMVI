@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 # 감정 사전 읽어 오기
 import config
 
@@ -26,6 +25,17 @@ def analyzeEmotion(df_emotion, token_list, lem_list):
         if -1 not in emotion_list:
             for idx in range(len(emotion_list)):
                 emotions[emotion_list[idx]] += float(score_list[idx])
+
+    list_max = max(emotions.values()) / 10
+
+    for i in emotions:
+        emotions[i] += list_max
+
+    list_sum = sum(emotions.values())
+
+    if list_sum != 0:
+        for i in emotions:
+            emotions[i] = emotions[i] / list_sum
 
     return emotions
 
