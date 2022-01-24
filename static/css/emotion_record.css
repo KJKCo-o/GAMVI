@@ -4,7 +4,7 @@
 }
 
 body {
-    height: 90vh;
+    height: 100vh;
     background-image: url("../assets/images/gamvi_background.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@ body {
     background-color: black;
 }
 
-button {
+.emotion-btns button {
     border: none;
     background: none;
 }
@@ -40,6 +40,20 @@ button {
 }
 
 .emotion-btns img {
-    margin-top: 20px;
+    margin-top: 30px;
+    width: 50%;
+}
+
+.back-btn {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: none;
+    background: none;
+}
+
+.back-btn img {
     width: 60%;
 }

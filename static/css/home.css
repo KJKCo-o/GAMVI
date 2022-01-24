@@ -14,7 +14,7 @@ a {
 }
 
 body {
-    height: 90vh;
+    height: 100vh;
     background-image: url("../assets/images/gamvi_background.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -123,4 +123,18 @@ body {
     width: 50%;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.start-btn {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border: none;
+    background: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.start-btn img {
+    width: 60%;
 }
