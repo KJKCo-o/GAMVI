@@ -175,4 +175,5 @@ body {
 
 .start-btn img {
     width: 60%;
+    cursor: pointer;
 }

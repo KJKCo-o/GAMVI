@@ -42,6 +42,7 @@ body {
 .emotion-btns img {
     margin-top: 30px;
     width: 50%;
+    cursor: pointer;
 }
 
 .back-btn {
@@ -56,4 +57,5 @@ body {
 
 .back-btn img {
     width: 60%;
+    cursor: pointer;
 }

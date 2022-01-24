@@ -13,14 +13,28 @@
         <h1>오늘의 감정을 기록하세요</h1>
         <div class="mirror"></div>
         <div class="emotion-btns">
-            <button id="btn-heart"><img src="{% static 'assets/images/gamvi_heart.png' %}"></button>
-            <button id="btn-excited"><img src="{% static 'assets/images/gamvi_excited.png' %}"></button>
-            <button id="btn-soso"><img src="{% static 'assets/images/gamvi_soso.png' %}"></button>
-            <button id="btn-blue"><img src="{% static 'assets/images/gamvi_blue.png' %}"></button>
-            <button id="btn-sad"><img src="{% static 'assets/images/gamvi_sad.png' %}"></button>
-            <button id="btn-angry"><img src="{% static 'assets/images/gamvi_angry.png' %}"></button>
+            <button id="btn-heart">
+                <img src="{% static 'assets/images/gamvi_heart.png' %}" onclick="location.href='/recording-voice'">
+            </button>
+            <button id="btn-excited">
+                <img src="{% static 'assets/images/gamvi_excited.png' %}" onclick="location.href='/recording-voice'">
+            </button>
+            <button id="btn-soso">
+                <img src="{% static 'assets/images/gamvi_soso.png' %}" onclick="location.href='/recording-voice'">
+            </button>
+            <button id="btn-blue">
+                <img src="{% static 'assets/images/gamvi_blue.png' %}" onclick="location.href='/recording-voice'">
+            </button>
+            <button id="btn-sad">
+                <img src="{% static 'assets/images/gamvi_sad.png' %}" onclick="location.href='/recording-voice'">
+            </button>
+            <button id="btn-angry">
+                <img src="{% static 'assets/images/gamvi_angry.png' %}" onclick="location.href='/recording-voice'">
+            </button>
         </div>
-        <button id="btnBack" class="back-btn"><img src="{% static 'assets/images/back_btn.png' %}"></button>
+        <button id="btnBack" class="back-btn">
+            <img src="{% static 'assets/images/back_btn.png' %}" onclick="history.back()">
+        </button>
     </div>
 </body>
 </html>

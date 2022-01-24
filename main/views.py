@@ -17,10 +17,8 @@ from main.models import Calendar, Detail, User
 def home(request):
     return render(request, 'main/home.html')
 
-
 def voice(request):
     return render(request, 'main/voice_record.html')
-
 
 def emotion(request):
     return render(request, 'main/emotion_record.html')
