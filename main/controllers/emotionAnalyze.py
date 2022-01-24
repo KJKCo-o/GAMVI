@@ -2,8 +2,11 @@ import pandas as pd
 
 
 # 감정 사전 읽어 오기
+import config
+
+
 def open_emotion_dictionary():
-    df_emotion = pd.read_excel('../../static/assets/resources/감정 단어.xlsx', index_col=0)
+    df_emotion = pd.read_excel(config.EMO_DICT_PATH, index_col=0)
     return df_emotion
 
 

@@ -7,5 +7,6 @@ urlpatterns = [
     path('voice', views.voice, name='voice'),
 
     # 캘린더
-    path('calendar', views.CalendarList.as_view())
+    path('calendar', views.CalendarList.as_view()),
+    path('analyze', views.Analyze.as_view())
 ]
