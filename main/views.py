@@ -23,6 +23,8 @@ class CalendarList(View):
 
             year_month = year + ("-0" if int(month) < 10 else "-") + month
             emotions = list(Calendar.objects.filter(user=user_id, date__startswith=year_month).values())
+            for emotion in emotions:
+                emotion['date'] = emotion['date'].day
 
             return JsonResponse({'emotions': emotions})
 
