@@ -4,9 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <title>GAMVI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/voice_record.css' %}">
-</head>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src='../../static/js/annyang.js'></script>
+    <script>
+        annyang.start({ autoRestart: false, continuous: true })
+        var recognition = annyang.getSpeechRecognizer();
+        var final_transcript = '';
+        recognition.interimResults = true;
+        recognition.onresult = function(event) {
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    console.log(final_transcript);
+                    final_transcript += event.results[i][0].transcript;
+                    //annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
+                } else {
+                    interim_transcript += event.results[i][0].transcript;
+                }
+            }
+        };
 
+        $(document).ready(function(){
+            $(document).on('click', '#btnComplete', function(){
+                console.log($(this).attr('id'));
+                annyang.abort();
+
+                $.ajax({
+                    url:'/analyze',
+                    type:'post',
+                    dataType:'json',
+                    async: true,
+                    data:
+                        JSON.stringify({
+                            'sentence' : "abc",
+                            'user_id' : "cyzhakt7",
+                            'emotion' : "angry"
+                        }),
+                    success : function(data) {
+                        console.log(data);
+                    },
+                    error : function(request, status, error){
+                        console.log('x');
+                    }
+                });
+            });
+        });
+<!--        function button_click(){-->
+<!--            console.log(final_transcript);-->
+<!--            annyang.abort();-->
+
+<!--            sendData(final_transcript);-->
+<!--        }-->
+
+<!--        function sendData(send_msg) {-->
+<!--            $.ajax({-->
+<!--                url:'/analyze',-->
+<!--                async:true,-->
+<!--                type:'post',-->
+<!--                dataType:'json',-->
+<!--                data: {-->
+<!--                    sentence : send_msg,-->
+<!--                    user_id : 'cyzhakt7',-->
+<!--                    emotion : 'angry'-->
+<!--                }-->
+<!--            });-->
+<!--        }-->
+    </script>
+</head>
 <body>
     <img class="logo" src="{% static 'assets/images/gamvi_logo.png' %}">
     <div id="recordVoice" class="voice-record">
