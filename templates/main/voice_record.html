@@ -15,8 +15,12 @@
         <button id="recording">
             <div class="loader loader-2"></div>
         </button>
-        <button id="btnBack" class="back-btn"><img src="{% static 'assets/images/back_btn.png' %}"></button>
-        <button id="btnComplete" class="complete-btn"><img src="{% static 'assets/images/complete_btn.png' %}"></button>
+        <button id="btnBack" class="back-btn">
+            <img src="{% static 'assets/images/back_btn.png' %}" onclick="history.back()">
+        </button>
+        <button id="btnComplete" class="complete-btn">
+            <img src="{% static 'assets/images/complete_btn.png' %}" onclick="location.href='/'">
+        </button>
     </div>
 </body>
 </html>

@@ -102,6 +102,7 @@ body {
 
 .back-btn img {
     width: 60%;
+    cursor: pointer;
 }
 
 .complete-btn {
@@ -116,4 +117,5 @@ body {
 
 .complete-btn img {
     width: 60%;
+    cursor: pointer;
 }
