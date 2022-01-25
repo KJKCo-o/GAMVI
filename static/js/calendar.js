@@ -65,7 +65,7 @@ function initCalendar() {
             data: queryParam,
             dataType: "json",
             success: function (data) {
-                console.log(data.emotions);
+                // console.log(data.emotions);
                 // 날짜 모두 렌더링
                 for (let i = 1; i <= nextDate; i++) {
                     calendar.innerHTML = calendar.innerHTML + '<button class="day current" disabled="disabled">' + i + '</button>'
@@ -103,11 +103,10 @@ function initCalendar() {
     $('.go-next').on('click', function () {
         thisMonth = new Date(currentYear, currentMonth + 1, 1);
         renderCalender(thisMonth);
-        console.log('ab');
     });
 
     $(document).on('click', '.recorded', function () {
         // console.log($(this).attr('id'));
-        location.href = 'calendar/' + $(this).attr('id');
+        location.href = 'detail?' + $(this).attr('id');
     })
 }

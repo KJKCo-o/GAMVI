@@ -86,7 +86,7 @@ body {
     width: calc(100% / 7);
     text-align: left;
     color: #000000;
-    font-size: 20px;
+    font-size: 27px;
     text-align: center;
     border-radius: 5px
 }
@@ -95,6 +95,7 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    font-family: 'nanum';
 }
 
 .left .current.angry {
