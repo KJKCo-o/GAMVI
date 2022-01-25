@@ -108,6 +108,6 @@ function initCalendar() {
 
     $(document).on('click', '.recorded', function () {
         // console.log($(this).attr('id'));
-        location.href = 'calendar/' + $(this).attr('id');
+        location.href = 'show-detail?' + $(this).attr('id');
     })
 }
