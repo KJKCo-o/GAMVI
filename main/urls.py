@@ -4,9 +4,9 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('recording-voice', views.voice, name='voice'),
-    path('selecting-emotion', views.emotion, name='emotion'),
-    path('show-detail', views.dailyDetail, name='detail'),
+    path('record/voice', views.voice, name='voice'),
+    path('record/emotion', views.emotion, name='emotion'),
+    path('detail', views.dailyDetail, name='detail'),
 
     # 캘린더
     path('calendar', views.CalendarList.as_view()),

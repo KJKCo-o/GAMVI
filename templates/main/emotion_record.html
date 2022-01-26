@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>GAMVI</title>
     <link rel="stylesheet" href="{% static 'css/emotion_record.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -13,24 +14,25 @@
         <h1>오늘의 감정을 기록하세요</h1>
         <div class="mirror"></div>
         <div class="emotion-btns">
-            <button id="btn-heart">
-                <img src="{% static 'assets/images/gamvi_heart.png' %}" onclick="location.href='/recording-voice'">
+            <button id="btn-heart" value="heart">
+                <img src="{% static 'assets/images/gamvi_heart.png' %}">
             </button>
-            <button id="btn-excited">
-                <img src="{% static 'assets/images/gamvi_excited.png' %}" onclick="location.href='/recording-voice'">
+            <button id="btn-excited" value="excited">
+                <img src="{% static 'assets/images/gamvi_excited.png' %}">
             </button>
-            <button id="btn-soso">
-                <img src="{% static 'assets/images/gamvi_soso.png' %}" onclick="location.href='/recording-voice'">
+            <button id="btn-soso" value="soso">
+                <img src="{% static 'assets/images/gamvi_soso.png' %}">
             </button>
-            <button id="btn-blue">
-                <img src="{% static 'assets/images/gamvi_blue.png' %}" onclick="location.href='/recording-voice'">
+            <button id="btn-blue" value="blue">
+                <img src="{% static 'assets/images/gamvi_blue.png' %}">
             </button>
-            <button id="btn-sad">
-                <img src="{% static 'assets/images/gamvi_sad.png' %}" onclick="location.href='/recording-voice'">
+            <button id="btn-sad" value="sad">
+                <img src="{% static 'assets/images/gamvi_sad.png' %}">
             </button>
-            <button id="btn-angry">
-                <img src="{% static 'assets/images/gamvi_angry.png' %}" onclick="location.href='/recording-voice'">
+            <button id="btn-angry" value="angry">
+                <img src="{% static 'assets/images/gamvi_angry.png' %}">
             </button>
+            <script src="{% static 'js/emotion_record.js'%}"></script>
         </div>
         <button id="btnBack" class="back-btn">
             <img src="{% static 'assets/images/back_btn.png' %}" onclick="history.back()">
