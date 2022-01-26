@@ -5,21 +5,81 @@
     <meta charset="UTF-8">
     <title>GAMVI</title>
     <link rel="stylesheet" href="{% static 'css/daily_detail.css' %}">
+    <link rel="stylesheet" href="../../static/css/jqbar.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </head>
 
 <body>
-    <img class="logo" src="{% static 'assets/images/gamvi_logo.png' %}">
-    <div class="daily-detail">
-        <h1>00월 00일 00님의 하루에요</h1>
+<img class="logo" src="{% static 'assets/images/gamvi_logo.png' %}">
+<div class="daily-detail">
+    <h1 id="detail_title">하루</h1>
 
-        <div class="detail-show">
-            <div class="detail">
-                <div id="showEmotion" class="detail-emotion"><img src="{% static 'assets/images/gamvi_angry.png' %}"></div>
-                <div id="showDiary" class="detail-diary">개그지 같은 대가리 고장난 년...</div>
+    <div class="detail-show">
+        <div class="detail">
+            <div id="showEmotion" class="detail-emotion"><img src="{% static 'assets/images/gamvi_angry.png' %}"></div>
+            <div id="showDiary" class="detail-diary">오늘 나는 밥을 먹었다. 맛있는 밥을 먹어서 기분이 너무 좋았다. 행복한 하루였다.오늘 나는 밥을 먹었다. 맛있는 밥을
+                먹어서 기분이 너무 좋았다. 행복한 하루였다.오늘 나는 밥을 먹었다. 맛있는 밥을 먹어서 기분이 너무 좋았다. 행복한 하루였다.오늘 나는 밥을 먹었다. 맛있는 밥을 먹어서 기분이 너무
+                좋았다. 행복한 하루였다.오늘 나는 밥을 먹었다. 맛있는 밥을 먹어서 기분이 너무 좋았다. 행복한 하루였다.오늘 나는 밥을 먹었다. 맛있는 밥을 먹어서 기분이 너무 좋았다. 행복한
+                하루였다.
             </div>
-            <div id="showGraph" class="detail-graph"><h1>그래프</h1></div>
         </div>
-        <button id="btnHome" class="home-btn"><img src="{% static 'assets/images/gamvi_house.png' %}"></button>
+        <div id="showGraph" class="detail-graph">
+            <div id="bar-1"></div>
+            <div id="bar-2"></div>
+            <div id="bar-3"></div>
+            <div id="bar-4"></div>
+            <div id="bar-5"></div>
+            <div id="bar-6"></div>
+            <script src="../../static/js/jqbar.js" type="text/javascript"></script>
+            <script type="text/javascript">
+
+                id = location.href.split("?")[1]
+                $.ajax({
+                    url: "/calendar/" + id, // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
+                    data: {}, // HTTP 요청과 함께 서버로 보낼 데이터
+                    method: "GET", // HTTP 요청 메소드(GET, POST 등)
+                    dataType: "json" // 서버에서 보내줄 데이터의 타입
+                }).done(function (json) {
+                    console.log(json)
+                    $('#detail_title').text(json.record.month + "월 " + json.record.day + "일 " + json.record.user_name + "님의 하루입니다.")
+                    $('#showDiary').text(json.record.sentence)
+                    $('#bar-1').jqbar({
+                        label: '행복 ',
+                        value: json.record.analysis_result.enjoyment * 100,
+                        barColor: '#FFA0B5'
+                    });
+                    $('#bar-2').jqbar({
+                        label: '슬픔 ',
+                        value: json.record.analysis_result.sadness * 100,
+                        barColor: '#90C5F3'
+                    });
+                    $('#bar-3').jqbar({
+                        label: '분노 ',
+                        value: json.record.analysis_result.anger * 100,
+                        barColor: '#FFE19E'
+                    });
+                    $('#bar-4').jqbar({
+                        label: '놀람 ',
+                        value: json.record.analysis_result.surprise * 100,
+                        barColor: '#9DD9D8'
+                    });
+                    $('#bar-5').jqbar({
+                        label: '혐오 ',
+                        value: json.record.analysis_result.disgust * 100,
+                        barColor: '#DDDFE1'
+                    });
+                    $('#bar-6').jqbar({
+                        label: '공포 ',
+                        value: json.record.analysis_result.fear * 100,
+                        barColor: '#BE9CFF'
+                    });
+                })
+
+
+            </script>
+        </div>
     </div>
+    <button id="btnHome" class="home-btn"><img src="{% static 'assets/images/gamvi_house.png' %}"></button>
+</div>
 </body>
 </html>
