@@ -21,7 +21,7 @@ function myRecognition() {
         }
     };
 
-    $('#btnComplete').on('click', function () {
+    $('#btn' + 'Complete').on('click', function () {
         setTimeout(() => console.log('이동'), 3000);
     });
 
